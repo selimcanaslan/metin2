@@ -1,12 +1,9 @@
 from tkinter import messagebox as mb
 import tkinter as tk
-
-
 def hide(root):
     root.withdraw()
 
-
-def error():
+def file_created():
     root = tk.Tk()
     hide(root)
-    mb.showerror("Hatasız Kul Olmaz !", " Hacı var bir yanlışın", )
+    mb.showinfo("Log Dosyası Bulunamadı !", "log.txt Oluşturuldu !\nHesapla Butonuna Tekrar Basınız",)
