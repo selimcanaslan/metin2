@@ -4,13 +4,109 @@ from makezero import makeZero
 from calculate_price import Items
 from calculate_multi_item import MultiItems
 from process_succeed import succeed
-from export import export
+# from export import export
 from costume_price import CostumeInfo
 from select_path import path
 import os
 
 
 class Ui_MainWindow(object):
+    def __init__(self):
+        self.selected_path = ""
+
+    def call_combo(self):
+        combo_values(self)
+
+    def call_make_zero(self):
+        makeZero(self)
+
+    def price_calculate(self):
+        item1_name = self.item_combo.currentText()
+        item1_price = self.won_line_1.text()
+        item1 = Items(item1_name, item1_price)
+
+        item2_name = self.item_combo.currentText()
+        item2_price = self.won_line_2.text()
+        item2 = Items(item2_name, item2_price)
+
+        item3_name = self.item_combo.currentText()
+        item3_price = self.won_line_3.text()
+        item3 = Items(item3_name, item3_price)
+
+        item4_name = self.item_combo.currentText()
+        item4_price = self.won_line_4.text()
+        item4 = Items(item4_name, item4_price)
+
+        item5_name = self.item_combo.currentText()
+        item5_price = self.won_line_5.text()
+        item5 = Items(item5_name, item5_price)
+
+        item6_name = self.item_combo.currentText()
+        item6_price = self.won_line_6.text()
+        item6 = Items(item6_name, item6_price)
+
+        item7_name = self.item_combo.currentText()
+        item7_price = self.won_line_7.text()
+        item7 = Items(item7_name, item7_price)
+
+        item8_name = self.item_combo.currentText()
+        item8_price = self.won_line_8.text()
+        item8 = Items(item8_name, item8_price)
+
+        item9_name = self.item_combo.currentText()
+        item9_price = self.won_line_9.text()
+        item9 = Items(item9_name, item9_price)
+
+        item10_name = self.item_combo.currentText()
+        item10_price = self.won_line_10.text()
+        item10 = Items(item10_name, item10_price)
+
+        toplam = Items.calculate(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
+        self.revenue_sum.setText(str(toplam))
+        number_of_metinstones = self.number_of_metinstones.text()
+        min_count = self.min_edit.text()
+        won_per_metin = int(toplam) / int(number_of_metinstones)
+        won_per_min = int(toplam) / int(min_count)
+        self.revenue_per_metinstone.setText(str(format(won_per_metin, '.2f')) + " won")
+        self.revenue_per_min.setText(str(format(won_per_min, '.2f')) + " won")
+        self.metin_per_min()
+        succeed()
+        # export(self)
+
+    def metin_per_min(self):
+        number_of_metinstones = self.number_of_metinstones.text()
+        min_count = self.min_edit.text()
+        metin_per_min = int(number_of_metinstones) / int(min_count)
+        self.text1.setText("Dakika başına " + str(format(metin_per_min, '.2f')) + " Metin Kestiniz")
+
+    def multi_item_price_calculate(self):
+        won = self.toplu_won.text()
+        yang = self.toplu_yang.text()
+        miktar = self.miktar.text()
+        giden = MultiItems(won, yang, miktar)
+        toplam_won, toplam_yang = MultiItems.multi_calculate(giden)
+        self.toplam_fiyat.setText(str(toplam_won) + " won " + str(toplam_yang) + " m")
+
+    def costume_price(self):
+        full_time_day = self.full_time_costume_day.text()
+        full_time_price = self.full_time_costume_price.text()
+        current_day = self.current_day.text()
+        current_hour = self.current_hour.text()
+        current_min = self.current_min.text()
+        costume = CostumeInfo(full_time_price, full_time_day, current_day, current_hour, current_min)
+        price = CostumeInfo.price_for_random_day(costume)
+        self.label_19.setText(str(format(price, '.2f')) + " Won")
+
+    def path_finder(self):
+        self.selected_path = path()
+
+    def run_metin2(self):
+        current_path = self.selected_path
+        if self.selected_path[:2] == "D:":
+            os.system("D: & CD {} & START Rohan2Global.exe".format(current_path))
+        else:
+            os.system("CD {} & dir".format(self.selected_path))
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
@@ -494,101 +590,6 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
-    def __init__(self):
-        self.selected_path = ""
-
-    def call_combo(self):
-        combo_values(self)
-
-    def call_make_zero(self):
-        makeZero(self)
-
-    def price_calculate(self):
-        item1_name = self.item_combo.currentText()
-        item1_price = self.won_line_1.text()
-        item1 = Items(item1_name, item1_price)
-
-        item2_name = self.item_combo.currentText()
-        item2_price = self.won_line_2.text()
-        item2 = Items(item2_name, item2_price)
-
-        item3_name = self.item_combo.currentText()
-        item3_price = self.won_line_3.text()
-        item3 = Items(item3_name, item3_price)
-
-        item4_name = self.item_combo.currentText()
-        item4_price = self.won_line_4.text()
-        item4 = Items(item4_name, item4_price)
-
-        item5_name = self.item_combo.currentText()
-        item5_price = self.won_line_5.text()
-        item5 = Items(item5_name, item5_price)
-
-        item6_name = self.item_combo.currentText()
-        item6_price = self.won_line_6.text()
-        item6 = Items(item6_name, item6_price)
-
-        item7_name = self.item_combo.currentText()
-        item7_price = self.won_line_7.text()
-        item7 = Items(item7_name, item7_price)
-
-        item8_name = self.item_combo.currentText()
-        item8_price = self.won_line_8.text()
-        item8 = Items(item8_name, item8_price)
-
-        item9_name = self.item_combo.currentText()
-        item9_price = self.won_line_9.text()
-        item9 = Items(item9_name, item9_price)
-
-        item10_name = self.item_combo.currentText()
-        item10_price = self.won_line_10.text()
-        item10 = Items(item10_name, item10_price)
-
-        toplam = Items.calculate(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
-        self.revenue_sum.setText(str(toplam))
-        number_of_metinstones = self.number_of_metinstones.text()
-        min_count = self.min_edit.text()
-        won_per_metin = int(toplam) / int(number_of_metinstones)
-        won_per_min = int(toplam) / int(min_count)
-        self.revenue_per_metinstone.setText(str(format(won_per_metin, '.2f')) + " won")
-        self.revenue_per_min.setText(str(format(won_per_min, '.2f')) + " won")
-        self.metin_per_min()
-        export(self)
-
-    def metin_per_min(self):
-        number_of_metinstones = self.number_of_metinstones.text()
-        min_count = self.min_edit.text()
-        metin_per_min = int(number_of_metinstones) / int(min_count)
-        self.text1.setText("Dakika başına " + str(format(metin_per_min, '.2f')) + " Metin Kestiniz")
-
-    def multi_item_price_calculate(self):
-        won = self.toplu_won.text()
-        yang = self.toplu_yang.text()
-        miktar = self.miktar.text()
-        giden = MultiItems(won, yang, miktar)
-        toplam_won, toplam_yang = MultiItems.multi_calculate(giden)
-        self.toplam_fiyat.setText(str(toplam_won) + " won " + str(toplam_yang) + " m")
-
-    def costume_price(self):
-        full_time_day = self.full_time_costume_day.text()
-        full_time_price = self.full_time_costume_price.text()
-        current_day = self.current_day.text()
-        current_hour = self.current_hour.text()
-        current_min = self.current_min.text()
-        costume = CostumeInfo(full_time_price, full_time_day, current_day, current_hour, current_min)
-        price = CostumeInfo.price_for_random_day(costume)
-        self.label_19.setText(str(format(price, '.2f')) + " Won")
-
-    def path_finder(self):
-        self.selected_path = path()
-
-    def run_metin2(self):
-        current_path = self.selected_path
-        if self.selected_path[:2] == "D:":
-            os.system("D: & CD {} & START Rohan2Global.exe".format(current_path))
-        else:
-            os.system("CD {} & dir".format(self.selected_path))
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
