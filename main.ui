@@ -782,19 +782,19 @@
      <rect>
       <x>240</x>
       <y>150</y>
-      <width>171</width>
-      <height>21</height>
+      <width>191</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <pointsize>7</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="text">
-     <string>Kostüm Fiyat Hesaplama</string>
+     <string>Güne Göre Nesne Fiyatı Hesaplama</string>
     </property>
    </widget>
    <widget class="Line" name="line_12">
@@ -949,6 +949,289 @@
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="label_20">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>450</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>CLİENT BAŞLAT</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="path_select_button">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>482</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>YOL SEÇ</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="run_client_button">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>512</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>BAŞLAT</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_13">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>440</y>
+      <width>351</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_14">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>30</y>
+      <width>20</width>
+      <height>521</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_15">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>540</y>
+      <width>351</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_16">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>450</y>
+      <width>20</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_17">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>10</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_21">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>290</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Hasara Göre Tahmini Farm</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_18">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>270</y>
+      <width>211</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_19">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>301</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_22">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>320</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Map Seçiniz :</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="item_combo_11">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>320</y>
+      <width>121</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_23">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>350</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Hasarınız :</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="hasar_line">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>350</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="estimated_metin_value">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>401</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Tahmini Metin Sayısı :</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="estimated_revenue">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>420</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tahmini Kazanç(won) :</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="estimated_farm_button">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>380</y>
+      <width>61</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>HESAPLA</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_20">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>392</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_24">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>380</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>SONUÇLAR</string>
+    </property>
+   </widget>
+   <zorder>line_19</zorder>
+   <zorder>line_18</zorder>
+   <zorder>line_12</zorder>
+   <zorder>line_9</zorder>
    <zorder>line_7</zorder>
    <zorder>line_11</zorder>
    <zorder>line_8</zorder>
@@ -1002,7 +1285,6 @@
    <zorder>miktar</zorder>
    <zorder>label_13</zorder>
    <zorder>toplam_fiyat</zorder>
-   <zorder>line_9</zorder>
    <zorder>toplu_calculate_button</zorder>
    <zorder>line_10</zorder>
    <zorder>line_5</zorder>
@@ -1011,7 +1293,6 @@
    <zorder>text3</zorder>
    <zorder>text4</zorder>
    <zorder>label_14</zorder>
-   <zorder>line_12</zorder>
    <zorder>label_15</zorder>
    <zorder>full_time_costume_day</zorder>
    <zorder>label_16</zorder>
@@ -1023,28 +1304,24 @@
    <zorder>current_min</zorder>
    <zorder>costume_button</zorder>
    <zorder>label_19</zorder>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuHome">
-    <property name="title">
-     <string>Home</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuBoss_Farm">
-    <property name="title">
-     <string>Boss Farm</string>
-    </property>
-   </widget>
-   <addaction name="menuHome"/>
-   <addaction name="menuBoss_Farm"/>
+   <zorder>label_20</zorder>
+   <zorder>path_select_button</zorder>
+   <zorder>run_client_button</zorder>
+   <zorder>line_13</zorder>
+   <zorder>line_14</zorder>
+   <zorder>line_15</zorder>
+   <zorder>line_16</zorder>
+   <zorder>line_17</zorder>
+   <zorder>label_21</zorder>
+   <zorder>label_22</zorder>
+   <zorder>item_combo_11</zorder>
+   <zorder>label_23</zorder>
+   <zorder>hasar_line</zorder>
+   <zorder>estimated_metin_value</zorder>
+   <zorder>estimated_revenue</zorder>
+   <zorder>estimated_farm_button</zorder>
+   <zorder>line_20</zorder>
+   <zorder>label_24</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
